@@ -1,0 +1,28 @@
+package com.questionnaire.db.entity;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.questionnaire.parent.ParentEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+
+/**
+ * TODO 角色
+ *
+ * @author ahui
+ * @since 2022-10-18
+ */
+@Data
+@EqualsAndHashCode(callSuper = true)
+@TableName("q_roles")
+public class Roles extends ParentEntity implements Serializable {
+
+    private static final long serialVersionUID = -5981432945385081451L;
+
+    /**
+     * 角色名称
+     */
+    private String name;
+
+}

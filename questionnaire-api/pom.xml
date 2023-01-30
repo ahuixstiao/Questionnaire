@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--父工程-->
+    <parent>
+        <artifactId>TeaCupQuestionnaire</artifactId>
+        <groupId>com.ahui</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>questionnaire-api</artifactId>
+    <version>1.0.0</version>
+    <name>questionnaire-api</name>
+
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--引入db模块-->
+        <dependency>
+            <groupId>com.ahui</groupId>
+            <artifactId>questionnaire-db</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- 热部署 -->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>-->
+
+        <!--
+        该依赖会生成配置类的元数据信息
+        这样在yml中自定义ConfigurationProperties类中的属性参数值时就可以获取到属性的名称提示.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- 单元测试 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion><!-- 排除junit4 -->
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.vaadin.external.google</groupId>
+                    <artifactId>android-json</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>TeaCupQuestionnaire</finalName>
+    </build>
+
+</project>

@@ -1,0 +1,10 @@
+# spring配置
+spring:
+  application:
+    name: TeaCupQuestionnaireSystem
+  #启用其他模块的配置文件
+  profiles:
+    # 开发环境
+    active: dev, db-dev, common-dev, gen-dev, schedule-dev
+    # 生产环境
+    #active: prod, db-prod, common-prod, gen-prod, schedule-prod

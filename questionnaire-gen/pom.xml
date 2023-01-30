@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>TeaCupQuestionnaire</artifactId>
+        <groupId>com.ahui</groupId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>questionnaire-gen</artifactId>
+    <version>1.0.0</version>
+    <name>questionnaire-gen</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ahui</groupId>
+            <artifactId>questionnaire-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- mbp 代码生成器 根据SQL表逆向生成entity、mapper、service等-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+        </dependency>
+        <!-- 模板引擎 二选一即可-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- generator需搭配模板引擎使用-->
+        <!--<dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-parent</artifactId>
+            <version>2.0</version>
+        </dependency>-->
+    </dependencies>
+
+</project>

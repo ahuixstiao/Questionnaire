@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.el-card {
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15) !important;
+}
+
+@font-face {
+    font-family: "txFont";
+    src: url('../txFont.ttf')
+}
+
+@font-face {
+    font-family: "smileySansFont";
+    src: url('../SmileySans-Oblique.ttf');
+}
